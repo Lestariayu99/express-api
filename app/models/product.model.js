@@ -18,3 +18,5 @@ schema.method("toJSON", function(){
 
     return mongoose.model("product.model", schema);
 }
+
+// menambahkan data : POST http://localhost:8000/product.model/

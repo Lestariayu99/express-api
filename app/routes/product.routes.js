@@ -11,7 +11,7 @@ module.exports = app => {
     app.use("/product.model", r);
 
 
-    // GET localhost:3000/product
+   
 }
 
 

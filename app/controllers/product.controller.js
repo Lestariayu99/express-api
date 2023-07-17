@@ -30,7 +30,7 @@ exports.update = (req, res) => {
             if (!data) {
                 res.send({message: "Tidak dapat mengupdate data"})
             }
-            res.send({message: "Berhasil update data !!! "})
+                res.send({message: "Berhasil update data !!! "})
         })
         .catch(err => res.status(500).send({message: err.message}))
     

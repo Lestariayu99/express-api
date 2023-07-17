@@ -1,19 +1,25 @@
-const express = require('express');
-const connectToDatabase = require('./dbConnection');
+const express = require('express')
+const cors = require("cors")
 
 const app = express();
 
+const corsOptions = {
+  origin: "*"
+};
+
+
+// register middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 
-connectToDatabase()
-  .then((db) => {
-    // Anda dapat menggunakan objek db di sini untuk operasi database
+// membuat routes
+app.get("/", (req, res) => {
+  res.json({message: "Hello Gabriel"});
+});
 
-    // Contoh: Menjalankan server Express.js di port tertentu
-    app.listen(3000, () => {
-      console.log('Server berjalan pada port 3000');
-    });
-  })
-  .catch((error) => {
-    console.error('Terjadi kesalahan:', error);
-  });
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => console.log(`server start on PORT ${PORT}`));
+
+
+
+// cara menjalankan apk ini : node app
